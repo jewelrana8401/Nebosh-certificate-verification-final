@@ -1,1 +1,0 @@
-# Nebosh-certificate-verification-final
