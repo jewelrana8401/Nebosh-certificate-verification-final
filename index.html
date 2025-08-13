@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEBOSH Disclaimer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      text-align: center;
+      color: #000;
+    }
+
+    /* Step progress bar */
+    .steps {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      color: gray;
+    }
+    .step.active {
+      font-weight: bold;
+      color: #000;
+    }
+    .step::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: #ccc;
+      margin: 0 10px;
+    }
+    .step:last-child::after {
+      display: none;
+    }
+
+    img.logo {
+      width: 100px;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    button {
+      background: #ccc;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      margin-top: 20px;
+      cursor: not-allowed;
+    }
+    button.enabled {
+      background: #0073e6;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="steps">
+    <div class="step active">1 Disclaimer</div>
+    <div class="step">2 Your Details</div>
+    <div class="step">3 Learner Details</div>
+    <div class="step">4 Finished</div>
+  </div>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Nebosh_logo.png" alt="NEBOSH Logo" class="logo" />
+
+  <div class="container">
+    <h2>IMPORTANT, PLEASE READ BEFORE CONTINUING</h2>
+    <p>
+      NEBOSH takes the security of personal data and NEBOSH certificates extremely seriously. As part of the verification process, NEBOSH will email the learner that was originally issued this certificate to authenticate your request.
+    </p>
+    <p>
+      To allow the learner to identify who is requesting information relating to them, your name and organisation will be provided to the learner to allow them to authorise your request.
+    </p>
+    <p>
+      Your email address will be used by NEBOSH to confirm the outcome of your request within 2 working days of submission.
+    </p>
+    <p>
+      Please note: The outcome of this request will be recorded and held by NEBOSH for monitoring purposes. This includes your name, organisation and email address. Please tick the box below to confirm your acceptance or contact NEBOSH
+    </p>
+
+    <label>
+      <input type="checkbox" id="agree" />
+      I confirm I am happy for NEBOSH to store and use my details, as detailed above tick box, must be ticked to proceed
+    </label>
+
+    <div style="text-align: center;">
+      <button id="nextBtn" disabled>Next</button>
+    </div>
+  </div>
+
+  <script>
+    const agree = document.getElementById('agree');
+    const nextBtn = document.getElementById('nextBtn');
+
+    agree.addEventListener('change', () => {
+      if (agree.checked) {
+        nextBtn.disabled = false;
+        nextBtn.classList.add('enabled');
+      } else {
+        nextBtn.disabled = true;
+        nextBtn.classList.remove('enabled');
+      }
+    });
+  </script>
+</body>
+</html>
