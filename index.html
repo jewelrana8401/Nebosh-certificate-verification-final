@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEBOSH Certificate Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header with Logo -->
+    <header>
+        <img src="Nebosh-logo-png.png" alt="Nebosh Logo" class="logo">
+    </header>
+
+    <!-- Multi Step Form -->
+    <div class="container">
+        
+        <!-- Step 1 -->
+        <div class="step step-1 active">
+            <h2>Important Notice</h2>
+            <p>
+                This service is provided to allow verification of NEBOSH certificates by entering the learner and 
+                qualification details. Please ensure you have the consent of the learner before proceeding.
+            </p>
+            <p>
+                The verification service is for genuine enquiries only. Any misuse may result in legal action.
+            </p>
+            <button class="next-btn" onclick="nextStep()">I Understand</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step step-2">
+            <h2>Your Details</h2>
+            <form id="detailsForm">
+                <label>Full Name:</label>
+                <input type="text" required>
+
+                <label>Email Address:</label>
+                <input type="email" required>
+
+                <label>Organisation:</label>
+                <input type="text">
+
+                <button type="button" onclick="prevStep()">Back</button>
+                <button type="button" onclick="nextStep()">Next</button>
+            </form>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step step-3">
+            <h2>Learner Details</h2>
+            <p><strong>Name:</strong> John Smith</p>
+            <p><strong>Qualification:</strong> NEBOSH National General Certificate in Occupational Health and Safety</p>
+            <p><strong>Date of Issue:</strong> 15 March 2024</p>
+            <p><strong>Certificate Number:</strong> 001234567</p>
+            <button type="button" onclick="prevStep()">Back</button>
+            <button type="button" onclick="nextStep()">Finish</button>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step step-4">
+            <h2>Verification Complete</h2>
+            <p>The learner's certificate has been successfully verified.</p>
+            <button onclick="window.location.reload()">Start Again</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
